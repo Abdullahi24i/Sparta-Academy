@@ -51,16 +51,37 @@
 - Global in minutes.
 
 #### What are some potential pitfalls/disadvantages of using the cloud?
-- Downtime and reliability issues
-- Security & privacy risks
-- Limited control & flexibility
-- Vendor Lock in
-- Performance issues
-- compliance & legal issues
+- Downtime and reliability issues - serivce outages can happen 
+- Security & privacy risks - exposure to cyber attacks and compliance issues. 
+- Limited control & flexibility - you dont manage underlying infrastructure.
+- Vendor Lock in - can be difficult to change providers
+- Performance issues - latency to end users
+- compliance & legal issues - data residency 
 
 #### Who are the biggest Cloud providers?
 - AWS
 - Azure
 - GCP
 
- 
+#### Which Cloud Provider is best? What are the big three known for?
+- AWS
+  -  Compute (EC2), Storage (S3), Serverless (Lambda), and a massive global infrastructure.
+- Azure
+  - Enterprise solutions using microsoft, hybrid cloud, AI with OpenAI, and largest compliance coverage of any cloud provider. Most data centres.
+- GCP
+  - AI/ML (Vertex AI, TensorFlow), Big Data (BigQuery), What sorts of thing do you usually pay for when using the cloud? Kubernetes (GKE)
+
+#### What sorts of thing do you usually pay for when using the cloud? 
+- Variable Expenditure, pay for what you use.
+- storage 
+- compute - virtual machines, serverless, AI 
+- Analytics services
+- security services 
+- business apps / services
+
+#### What are the four pillars of DevOps? How are they linked to cloud computing?
+- Automation - IaC
+- Collaboration 
+- Monitoring - Monitoring & metric services
+- Continuous improvement  
+  
