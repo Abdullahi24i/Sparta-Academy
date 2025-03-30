@@ -89,7 +89,7 @@ to add an identity to then add your private key
 ### git remote add origin <origin>
 - to add origin
 
-add this file
+
 
 
 
