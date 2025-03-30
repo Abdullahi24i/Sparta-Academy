@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<football_player>
+    <name>Cristiano Ronaldo</name>
+    <age>39</age>
+    <is_football_player>true</is_football_player>
+    <date_of_birth>1985-02-05</date_of_birth>
+    <place_of_birth>Funchal, Madeira, Portugal</place_of_birth>
+    <football_teams>
+        <team>Al-Nassr</team>
+        <team>Manchester United</team>
+        <team>Juventus</team>
+        <team>Real Madrid</team>
+    </football_teams>
+</football_player>

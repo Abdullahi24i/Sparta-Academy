@@ -1,0 +1,9 @@
+{
+    "name": "Cristiano Ronaldo",
+    "age": 40,
+    "football_player": true,
+    "date_of_birth": "1985-02-05",
+    "place_of_birth": "Funchal, Madeira, Portugal",
+    "football_teams": ["Al-Nassr", "Manchester United", "Juventus", "Real Madrid"]
+  }
+  

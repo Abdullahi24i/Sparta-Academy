@@ -104,3 +104,4 @@
 - | is used to combine two commands together 
 - `nohup` = keep processes running even after exiting the shell or terminal
 - `curl` = a command line tool that developers use to transfer data to and from a server
+- 
