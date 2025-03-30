@@ -94,8 +94,7 @@ to add an identity to then add your private key
 
 
 ### What is GitHub?
-
-# 
+- A remote repository to your files can be saved online in case of local repository failure.
 
 
 - 
