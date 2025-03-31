@@ -20,11 +20,28 @@
 - It proctects clients' online identity as the client IP address is hidden and only the proxy IP is visible 
 - It is used to block access to certain content- filtering rules i.e. social networks for schools 
   
+
   
 ![Forward-proxy](../Pictures/forward-proxy.jpg)
 
 
-This is the script to manually create a reverse proxy 
+How do they work?
+* Here’s how a reverse proxy works in a typical web setup:
+
+* Client Request: A user sends a request.
+
+* Reverse Proxy: The request first hits the reverse proxy server. The reverse proxy will then determine which backend server is most appropriate to handle the request (this can be based on load balancing algorithms, such as round-robin or least connections).
+
+* Forward to Backend Server: The reverse proxy forwards the request to the selected backend server. The backend server processes the request, such as fetching data from a database or serving a web page.
+
+* Backend Response: The backend server sends its response (like HTML, images, or data) back to the reverse proxy.
+
+* Return to Client: The reverse proxy sends the response back to the client, making it appear as if the reverse proxy itself is serving the content.
+
+- This whole process ensures that the client never communicates directly with the backend servers.
+
+
+##### This is the script to manually create a reverse proxy 
 
 - You first need to install updates onto the virtual server through `sudo apt update -y`
 - you then need to update all packages on the server via `sudo apt upgrade -y`
