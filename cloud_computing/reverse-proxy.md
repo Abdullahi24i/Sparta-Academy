@@ -34,4 +34,4 @@ This is the script to manually create a reverse proxy
 - save the file
 - restart nginx via command: `sudo systemctl restart nginx`
 - enable nginx via command: 'sudo systemctl enable nginx'
- 
+  
