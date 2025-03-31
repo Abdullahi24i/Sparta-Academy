@@ -47,7 +47,7 @@ How do they work?
 - you then need to update all packages on the server via `sudo apt upgrade -y`
 - you then need to install nginx via `sudo apt install nginx -y`
 - you will need to change the configuartion of nginx by accessing the 'default' file via command: `sudo nano /etc/nginx/sites-available/default`
-- It is in this file where you will go to location, then add the command: `proxy_pass http://[public-IP]:[port];` inside the curly brackets
+- It is in this file where you will go to location, then add the command: `proxy_pass http://[localhost]:[port];` inside the curly brackets
 - save the file
 - restart nginx via command: `sudo systemctl restart nginx`
 - enable nginx via command: `sudo systemctl enable nginx`
