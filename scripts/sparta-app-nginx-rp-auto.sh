@@ -16,6 +16,9 @@ sudo apt upgrade -y
 # install nginx
 sudo apt install nginx -y
 
+# go to location and in the curly brackets do the following,51 = line c = change sed = automatically change 
+sudo sed -i '51c\proxy_pass http://localhost:3000;' /etc/nginx/sites-available/default
+
 # restart nginx 
 sudo systemctl restart nginx 
 
@@ -37,20 +40,8 @@ sudo npm install
 
 sudo DEBIAN_FRONTEND=noninteractive npm install pm2 -g
 
-pm2 kill
+sudo pm2 kill
 
-pm2 start app.js 
+sudo pm2 start app.js 
 
-pm2 startup
-
-
-# start app 
-#sudo npm start app.js & 
-#bg
-
-# can do `nohup node app.js`
-# to start the app and keep it running even after the exiting terminal
-
-# to kill any processes running in the background - if you run it multiple times it won'r crash (idempotency)
-
-# idempotency is an operation that will produce the same result over and over again
+sudo pm2 startup

@@ -3,7 +3,7 @@
 # set non interactive mode to skip interactive prompts (e.g., from need restart)
 export DEBIAN_FRONTEND=noninteractive
 
-# update
+# update all packages on system and looks for common packages and installs them too
 sudo apt update -y 
 
 # upgrade
