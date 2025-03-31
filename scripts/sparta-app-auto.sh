@@ -23,7 +23,7 @@ sudo systemctl restart nginx
 sudo systemctl enable nginx 
 
 # get app code - using github - basically cloning the repo
-git clone https://github.com/JsonRwson/Sparta-test-app.git
+git clone https://github.com/Abdullahi24i/Sparta-test-app.git
 
 # give instance an specific version of node.js to install and to install node.js
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
