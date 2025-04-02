@@ -36,12 +36,11 @@ sudo apt-get install -y nodejs
 cd Sparta-test-app/app
 
 # install npm 
-sudo npm install 
 
-sudo DEBIAN_FRONTEND=noninteractive npm install pm2 -g
+sudo DEBIAN_FRONTEND=noninteractive npm install -g pm2
 
-sudo pm2 kill
+pm2 kill
 
-sudo pm2 start app.js 
+pm2 start app.js 
 
-sudo pm2 startup
+pm2 startup

@@ -12,10 +12,10 @@
 #### Explain the four main cloud deployment models
 - ##### Private
   - Dedicated to a single organization, either on-premises or dedicated host by a third-party provider.
-  - Provides greater control, security, and customization.
+  - Provides greater control, security, and customisation.
   - Typically more expensive and requires in-house IT expertise.
 - ##### Community
-  - Shared infrastructure among multiple organizations with common interests (e.g., government agencies, healthcare institutions).
+  - Shared infrastructure among multiple organisations with common interests (e.g., government agencies, healthcare institutions).
   - Provides better security and compliance than public clouds while reducing costs compared to private clouds.
   - Limited scalability compared to public cloud options.
 - ##### Public

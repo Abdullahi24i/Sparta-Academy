@@ -40,8 +40,14 @@ sudo systemctl start mongod
 # check status 
 sudo systemctl status mongod
 
-# change env variable 
-export DB_HOST=mongodb://<db-ip-address>:27017/posts
 
-printenv DBHOST
+
+#TO CONNECT TO DATABASE 
+# go to app bash window 
+# change env variable 
+#export DB_HOST=mongodb://<db-ip-address>:27017/posts
+#printenv DBHOST to check env variable
+# sudo npm install 
+#node seeds/seed.js 
+# pm2 start app.js 
 
