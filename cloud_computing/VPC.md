@@ -21,7 +21,7 @@
 - **Granular control** - Businesses can define their own IP address ranges, subnets, route tables, and security rules and network firewalls, giving them precise control over their cloud environment.
 - **Compliance** -  VPCs can help businesses meet compliance requirements by providing a controlled environment for data storage and processing. 
 -  **Cost** - By isolating resources within VPCs, organizations can optimize resource utilization and reduce costs associated with unnecessary network traffic or security vulnerabilities. 
--  VPCs can be used to launch managed services like Elastic Load Balancing, Amazon RDS, and Amazon EMR, simplifying infrastructure management and reducing operational costs. 
+   -  VPCs can be used to launch managed services like Elastic Load Balancing, Amazon RDS, and Amazon EMR, simplifying infrastructure management and reducing operational costs. 
 
 
 ### How do they help DevOps?
