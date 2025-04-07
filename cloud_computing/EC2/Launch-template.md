@@ -1,10 +1,10 @@
 1. Go to the AWS Management Console and navigate to EC2 service and find launch templates on the side.
    
-![alt text](../Pictures/Launch-template/LT-AMC.png)
+![alt text](../../Pictures/Launch-template/LT-AMC.png)
 
 
 
-2. Click on Create Launch Template.
+1. Click on Create Launch Template.
 
 ![alt text](../Pictures/Launch-template/lt-create.png)
 

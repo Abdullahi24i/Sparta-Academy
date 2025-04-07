@@ -2,10 +2,10 @@
     - On the left menu, click Alarms → Create Alarm.
 
 
-![alt text](../Pictures/Cloudwatch-alarm/aws-cw-alarms.png)
+![alt text](../../Pictures/Cloudwatch-alarm/aws-cw-alarms.png)
 
 
-![alt text](../Pictures/Cloudwatch-alarm/aws-create-alarm.png)
+![alt text](../../Pictures/Cloudwatch-alarm/aws-create-alarm.png)
 
 
 
@@ -15,7 +15,7 @@
 
 
 
-  ![alt text](../Pictures/Cloudwatch-alarm/aws-select-alarm-metric.png)
+  ![alt text](../../Pictures/Cloudwatch-alarm/aws-select-alarm-metric.png)
 
 
 
@@ -23,14 +23,14 @@
 3. Select EC2.  
 
 
-  ![alt text](../Pictures/Cloudwatch-alarm/aws-ec2-select-metric.png)
+  ![alt text](../../Pictures/Cloudwatch-alarm/aws-ec2-select-metric.png)
 
 
     - In the search bar, type your EC2 instance ID 
 
 
 
-   ![alt text](../Pictures/Cloudwatch-alarm/aws-per-instance-metrics.png)
+   ![alt text](../../Pictures/Cloudwatch-alarm/aws-per-instance-metrics.png)
 
 
 
@@ -39,7 +39,7 @@
 
 
 
-    ![alt text](../Pictures/Cloudwatch-alarm/aws-cpu-utilisation.png)
+    ![alt text](../../Pictures/Cloudwatch-alarm/aws-cpu-utilisation.png)
 
 
 
@@ -50,7 +50,7 @@
 
 
 
-     ![alt text](../Pictures/Cloudwatch-alarm/aws-metric-conditons.png)
+     ![alt text](../../Pictures/Cloudwatch-alarm/aws-metric-conditons.png)
 
 
 
@@ -63,7 +63,7 @@
 
 
 
-  ![alt text](../Pictures/Cloudwatch-alarm/aws-alarm-sns-topic.png)
+  ![alt text](../../Pictures/Cloudwatch-alarm/aws-alarm-sns-topic.png)
 
 
 
@@ -73,11 +73,11 @@
 
 
 
-   ![alt text](../Pictures/Cloudwatch-alarm/aws-alarm-name.png)
+   ![alt text](../../Pictures/Cloudwatch-alarm/aws-alarm-name.png)
 
 
 
 
 7. Create alarm
 
-   ![alt text](../Pictures/Cloudwatch-alarm/aws-finish-creating-alarm.png)
+   ![alt text](../../Pictures/Cloudwatch-alarm/aws-finish-creating-alarm.png)

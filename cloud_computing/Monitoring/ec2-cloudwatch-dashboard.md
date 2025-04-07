@@ -3,21 +3,21 @@
 
 
 
-![alt text](../Pictures/Create-Dashboard/Creating-instance-AMI.png)
+![alt text](../../Pictures/Create-Dashboard/Creating-instance-AMI.png)
 
 
     - configure key pair to log in and security groups for the application
 
 
 
-![alt text](../Pictures/Create-Dashboard/aws-keypair-securitygroup.png)
+![alt text](../../Pictures/Create-Dashboard/aws-keypair-securitygroup.png)
 
 
 
     - Launch instance.
 
 
-![alt text](../Pictures/Create-Dashboard/aws-launch-instance.png)
+![alt text](../../Pictures/Create-Dashboard/aws-launch-instance.png)
 
 
 
@@ -26,7 +26,7 @@
 
 
 
-![alt text](../Pictures/Create-Dashboard/aws-instance-monitoring.png)
+![alt text](../../Pictures/Create-Dashboard/aws-instance-monitoring.png)
 
 
 
@@ -34,7 +34,7 @@
 
 
 
-![alt text](../Pictures/Create-Dashboard/aws-enable-detailed-monitoring.png)
+![alt text](../../Pictures/Create-Dashboard/aws-enable-detailed-monitoring.png)
 
 
 
@@ -42,11 +42,11 @@
 
 
 
-![alt text](../Pictures/Create-Dashboard/aws-instance-monitoring.png)
+![alt text](../../Pictures/Create-Dashboard/aws-instance-monitoring.png)
 
 
 
 6. create a new dashboard- insert a name and click create then add to dashboard 
 
 
-   ![alt text](../Pictures/Create-Dashboard/aws-create-dashboard.png)
+   ![alt text](../../Pictures/Create-Dashboard/aws-create-dashboard.png)

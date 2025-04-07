@@ -6,12 +6,12 @@
 ### VPC Diagram:
 - A secure, isolated private cloud hosted within a public cloud
 
-![alt text](../Pictures/VPC/VPC-diagram.png)
+![alt text](../../Pictures/VPC/VPC-diagram.png)
 
   
 
 
-![alt text](../Pictures/VPC/vpc-aws.png)
+![alt text](../../Pictures/VPC/vpc-aws.png)
 
 
 ### How do VPCs help a business?
@@ -60,13 +60,13 @@
 
 - **CIDR Blocks** 
   - A Classless Inter-Domain Routing (CIDR) block is a notation that specifies the IP address range for a VPC (e.g., 10.0.0.0/16). It defines the number of available IP addresses in the range
-   ![alt text](../Pictures/VPC/aws-cidr.png)
+   ![alt text](../../Pictures/VPC/aws-cidr.png)
 
 
 - **Internet Gateways (IGW)**
   - : An Internet Gateway allows communication between resources in your VPC and the internet. It’s attached to a VPC and enables public internet access for resources in public subnets.
 
-    ![alt text](../Pictures/VPC/aws-igw.png)
+    ![alt text](../../Pictures/VPC/aws-igw.png)
 
 
 
@@ -79,7 +79,7 @@
 
     - Target: Defines where traffic should go (e.g., Internet Gateway, NAT Gateway, VPN, another subnet).
 
-    ![alt text](../Pictures/VPC/example-route-table.png)
+    ![alt text](../../Pictures/VPC/example-route-table.png)
 
 
 - **SG and how SGs work on an INSTANCE level**
