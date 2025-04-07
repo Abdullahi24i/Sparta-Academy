@@ -71,7 +71,7 @@
 
 
 - **Route Table**
-  - A Route Table in AWS is a set of rules (routes) that control network traffic within a VPC (Virtual Private Cloud). It determines how data moves between subnets, the internet, and other networks (e.g., on-premises).
+  - A Route Table in AWS is a set of rules (routes) that control network traffic within a VPC (Virtual Private Cloud). It determines how data moves between subnets, the internet, and other networks (e.g., on-premises). Essentially a database that keeps track of paths, like a map, and uses these to determine which way to forward traffic.
   - Each subnet in a VPC must be associated with one route table.
   - Each entry in the table consists of:
 
