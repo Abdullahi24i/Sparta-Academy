@@ -8,7 +8,7 @@
 - It can also handle SSL ecrytion, so data can be secure in transit. This means there is no need for the clients to handle SSL 'hand-shake' from all websites, only with a small number of reverse proxies. This can save a lot of money and computational power. 
 
 
-![reverse-proxy](../Pictures/reverse-proxy.png)
+![alt text](../Pictures/Reverse-Proxy/reverse-proxy.png)
 
 
 
@@ -22,7 +22,7 @@
   
 
   
-![Forward-proxy](../Pictures/forward-proxy.jpg)
+![alt text](../Pictures/Reverse-Proxy/forward-proxy.jpg)
 
 
 How do they work?
