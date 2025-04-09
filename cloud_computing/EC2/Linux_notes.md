@@ -63,7 +63,7 @@
 - permissions control who can access files and directories and what actions they can perform. cloud servers also use linux for this 
 - owner, group, everyone else in that order so rwxrwxr-x means owner can rwx groups can rwx and everyone else can read and execute only
 - d means directory 
-- can use linuc permissions calculator to work out permissions
+- can use linux permissions calculator to work out permissions
 - 
 
 - `printenv` to see all env variables

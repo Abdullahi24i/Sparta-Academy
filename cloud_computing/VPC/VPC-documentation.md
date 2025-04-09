@@ -81,7 +81,7 @@
    2. Select your Public Subnet
     ![alt text](../../Pictures/VPC/select-public-subnet.png)
    3. Click "Actions" → "Modify Auto-Assign IP Settings"
-    ![alt text](edit-subnet-settings.png)
+    ![alt text](../../Pictures/VPC/edit-subnet-settings.png)
    4. Enable Auto-Assign IPv4 → Click "Save"
     ![alt text](../../Pictures/VPC/enable-auto-assign-ipv4.png)
 
