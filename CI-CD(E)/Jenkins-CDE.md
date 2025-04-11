@@ -43,8 +43,8 @@
    3. Add commands to execute within the app folder, such as deployment scripts or configuration updates.
 
 ```
-rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@ec2-34-244-98-98.eu-west-1.compute.amazonaws.com:/home/ubuntu
-ssh -o "StrictHostKeyChecking=no" ubuntu@ec2-34-244-98-98.eu-west-1.compute.amazonaws.com <<EOF
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@Public-IP-DNS:/home/ubuntu
+ssh -o "StrictHostKeyChecking=no" ubuntu@Public-IP-DNS <<EOF
    cd app
    npm install
    pm2 kill
