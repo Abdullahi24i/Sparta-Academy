@@ -1,11 +1,11 @@
-## **Step 1: Create a New Jenkins Job**
+### **Step 1: Create a New Jenkins Job**
 
 1. Go to **Jenkins Dashboard > New Item**.
 2. Choose **Copy from** and give it a name.
 3. Select the project you want to copy from. This helps in reusing existing configurations, saving time and maintaining consistency.
 4. Click **OK**.
 
-## **Configurations have been copied from the selected job.**
+### **Configurations have been copied from the selected job.**
 
 1. Change the description of the job to reflect its new purpose.
 
@@ -42,6 +42,18 @@
    2. Add the app directory so Jenkins knows where to navigate.
    3. Add commands to execute within the app folder, such as deployment scripts or configuration updates.
 
+```
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@ec2-34-244-98-98.eu-west-1.compute.amazonaws.com:/home/ubuntu
+ssh -o "StrictHostKeyChecking=no" ubuntu@ec2-34-244-98-98.eu-west-1.compute.amazonaws.com <<EOF
+   cd app
+   npm install
+   pm2 kill
+   pm2 start app.js
+EOF
+```
+
+
+
    ![alt text](../Pictures/Jenkins/jenkins-cde-add-executeshell.png)
 
    4. Click **Save**.
@@ -55,16 +67,20 @@
 5. Select **CDE** as the downstream project in the 'Projects to build' tab. This ensures that once the current job finishes successfully, it triggers the CDE job automatically.
 6. Click **Save**.
 
-   [alt text](../Pictures/Jenkins/jenkins-add-cde-to-job2.png)
+![alt text](../Pictures/Jenkins/jenkins-add-cde-to-job2.png)
 
-## **9: Make Changes to Code Then Use Git Push to Trigger Job 1**
+### **9: Make Changes to Code Then Use Git Push to Trigger Job 1**
 After making changes to the code, pushing it to the repository will trigger the first Jenkins job, starting the CI/CD process and ensuring the changes are deployed efficiently.
 
+![alt text](../Pictures/Jenkins/jenkins-git-push-CDE.png)
 
 
+### When complete you should see the jobs marked as completed and stable in the Build history tab.
 
 
-## **10: You should see you're changes published on the app website. **
+![alt text](../Pictures/Jenkins/Jenkins-build-history.png)
+
+### **10: You should see you're changes published on the app website. **
 
 
-   ![alt text](../Pictures/Jenkins/jenkins-cde-webapp-change.png)
+![alt text](../Pictures/Jenkins/jenkins-cde-webapp-change.png)
