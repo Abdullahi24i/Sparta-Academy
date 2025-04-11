@@ -64,3 +64,7 @@ After making changes to the code, pushing it to the repository will trigger the 
 
 
 
+## **10: You should see you're changes published on the app website. **
+
+
+   ![alt text](../Pictures/Jenkins/jenkins-cde-webapp-change.png)
