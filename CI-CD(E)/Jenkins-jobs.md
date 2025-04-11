@@ -26,17 +26,21 @@
 4. Configure the Job - Once you create the job, you’ll be taken to the configuration page, where you’ll define how the job runs.
    1. General Information:
         - Description: Optionally, you can add a description for your job (helps others understand its purpose).
+    
     ![alt text](../Pictures/Jenkins/jenkins-description-github-url.png)
+   
+   2. Configure discard old builds, so that you don't have jobs saved 
+ 
 
-   2. Add GitHub Project: 
+   3. Add GitHub Project: 
         - Enter URL of GitHub repository 
-   3. Create SSH Key and deploy key in Github 
+   4. Create SSH Key and deploy key in Github 
         - Create SSH Key in Bash terminal using command: ssh-keygen -t rsa -b 4096 -C "placeholder@hotmail.com"
         - Go to repository settings, find deploy keys in the security tab on the left hand side. Give your key a name and paste the contents of your PUBLIC KEY into the key section and make sure to allow write access!
     
     ![alt text](../Pictures/Jenkins/jenkins-github-deploy-key.png)
 
-   4. Source Code Management: If you're pulling code from a repository (like GitHub or Bitbucket), configure the Source Code Management section:
+   5. Source Code Management: If you're pulling code from a repository (like GitHub or Bitbucket), configure the Source Code Management section:
         - Select Git or another SCM system.
     ![alt text](../Pictures/Jenkins/jenkins-scm-git.png)
 
@@ -46,11 +50,11 @@
     ![alt text](../Pictures/Jenkins/jenkins-ssh-cred-start.png)
     ![alt text](../Pictures/Jenkins/jenkins-ssh-cred-finish.png)
    
-   5. Configure Branches to Build: 
+   6. Configure Branches to Build: 
         - Change from 'master' to 'main'
     ![alt text](../Pictures/Jenkins/jenkins-master-main-branch.png)
 
-   6. Build Triggers: This section defines when the job should be triggered.
+   7. Build Triggers: This section defines when the job should be triggered.
 
         - Build periodically: Set up a cron-like schedule for regular execution.
 
@@ -59,12 +63,12 @@
         - Poll SCM: Poll the repository for changes at specified intervals.
     ![alt text](../Pictures/Jenkins/jenkins-build-trigger.png)
 
-   7. Build Environment: If you need to set up environment variables or other parameters before running the build, you can configure this here. These can be things like having Node installed.
+   8. Build Environment: If you need to set up environment variables or other parameters before running the build, you can configure this here. These can be things like having Node installed.
         - Here we will select 'Provide Node & npm bin/ folder to PATH.
 
     ![alt text](../Pictures/Jenkins/jenkins-build-env-node.png)
 
-   8. Build Steps: This is where you define what the job does during the build. Common build steps include:
+   9. Build Steps: This is where you define what the job does during the build. Common build steps include:
 
         - Execute Shell: Run shell commands (e.g., build scripts) 
         - Select 'Add build step' the select 'Execute shell'

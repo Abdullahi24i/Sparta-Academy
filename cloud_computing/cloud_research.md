@@ -60,7 +60,7 @@
 #### What are some potential pitfalls/disadvantages of using the cloud?
 - Downtime and reliability issues - serivce outages can happen 
 - Security & privacy risks - exposure to cyber attacks and compliance issues. 
-- Limited control & flexibility - you dont manage underlying infrastructure.
+- Limited control & flexibility - you don't manage underlying infrastructure.
 - Vendor Lock in - can be difficult to change providers
 - Performance issues - latency to end users
 - compliance & legal issues - data residency 
