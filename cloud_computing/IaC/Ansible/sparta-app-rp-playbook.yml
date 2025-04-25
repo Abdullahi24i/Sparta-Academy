@@ -1,0 +1,112 @@
+---
+# This playbook installs and runs a Node.js app with Nginx and PM2 on target hosts in the 'app' group
+
+- name: Deploy Node.js App with Nginx
+  hosts: app           # Target the 'app' group from your inventory
+  become: true         # Run tasks with sudo privileges
+  vars:
+    app_repo: "https://github.com/Abdullahi24i/Sparta-test-app.git"  # GitHub repo of your Node.js app
+    app_base_dir: "/home/ubuntu/Sparta-test-app"                     # Base directory for the repo
+    app_dir: "/home/ubuntu/Sparta-test-app/app"                      # Directory where the app.js file is
+    nodejs_setup_url: "https://deb.nodesource.com/setup_20.x"        # Node.js 20 setup script
+    nginx_config_file: "/etc/nginx/sites-available/default"  # Add this line
+
+
+  tasks:
+
+    - name: Set non-interactive mode for APT
+      # Prevents APT from prompting during install/upgrade
+      ansible.builtin.shell: 'echo "export DEBIAN_FRONTEND=noninteractive" >> /etc/environment'
+      args:
+        executable: /bin/bash
+
+    - name: Update apt cache
+      # Refreshes the package index
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Upgrade packages
+      # Upgrades all packages to latest available versions
+      ansible.builtin.apt:
+        upgrade: dist
+
+    - name: Install Nginx
+      # Installs the Nginx web server
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Replace line 51 in Nginx config with proxy_pass to localhost:3000
+      # Directly replaces line 51 using sed (like in your Bash script)
+      ansible.builtin.shell: |
+        sed -i '51c\proxy_pass http://localhost:3000;' {{ nginx_config_file }}
+
+    - name: Ensure Nginx is started and enabled
+      # Restarts Nginx to apply changes and enables it to start at boot
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+        enabled: yes
+
+    - name: Install Git
+      # Git is required to clone your app repository
+      ansible.builtin.apt:
+        name: git
+        state: present
+
+    - name: Clone the app repository
+      # Clones your Node.js app repo from GitHub
+      ansible.builtin.git:
+        repo: "{{ app_repo }}"
+        dest: "{{ app_base_dir }}"
+        force: yes  # Overwrites any existing folder
+
+    - name: Download Node.js setup script
+      # Downloads the Node.js 20.x setup script from Nodesource
+      ansible.builtin.get_url:
+        url: "{{ nodejs_setup_url }}"
+        dest: /tmp/nodesource_setup.sh
+        mode: '0755' # permissions given to copy
+
+    - name: Run Node.js setup script
+      # Executes the downloaded setup script to add Node.js 20.x repository
+      ansible.builtin.command: bash /tmp/nodesource_setup.sh
+      args:
+        creates: /etc/apt/sources.list.d/nodesource.list  # Prevents rerun if repo already added
+
+    - name: Install Node.js
+      # Installs Node.js from the added repo
+      ansible.builtin.apt:
+        name: nodejs
+        state: present
+
+    - name: Install app dependencies with npm
+      # Installs app dependencies listed in package.json
+      ansible.builtin.shell: npm install
+      args:
+        chdir: "{{ app_dir }}"
+
+    - name: Install PM2 globally
+      # Installs PM2 (Process Manager) globally to manage your Node app
+      ansible.builtin.npm:
+        name: pm2
+        global: true
+
+    - name: Kill existing PM2 processes (ignore if none running)
+      # Optional: stops all running PM2 processes
+      ansible.builtin.command: pm2 kill
+      ignore_errors: yes
+
+    - name: Start the app with PM2
+      # Launches your app using PM2
+      ansible.builtin.command: pm2 start app.js
+      args:
+        chdir: "{{ app_dir }}"
+
+    - name: Run PM2 startup script
+      # Prepares PM2 to auto-start your app on server reboot
+      ansible.builtin.command: pm2 startup
+
+
+
+

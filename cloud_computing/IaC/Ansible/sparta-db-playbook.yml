@@ -1,0 +1,95 @@
+---
+- name: Install and Configure MongoDB on Ubuntu (Jammy)
+  hosts: app
+  become: true
+  vars:
+    mongo_version: "7.0.6"
+    mongo_tools_version: "7.0.6"
+    mongo_mongosh_version: "2.1.5"
+    mongo_gpg_key_url: "https://www.mongodb.org/static/pgp/server-7.0.asc"
+    mongo_gpg_key_path: "/usr/share/keyrings/mongodb-server-7.0.gpg"
+    mongo_source_list_path: "/etc/apt/sources.list.d/mongodb-org-7.0.list"
+    mongo_repo_line: 'deb [ arch=amd64,arm64 signed-by={{ mongo_gpg_key_path }} ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse'
+
+  tasks:
+
+    - name: Update APT package list
+      # Refresh list of available packages
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Upgrade installed packages
+      # Upgrade all current packages without user interaction
+      ansible.builtin.apt:
+        upgrade: dist
+
+    - name: Install gnupg and curl
+      # These tools are required to add MongoDB's GPG key and download files
+      ansible.builtin.apt:
+        name:
+          - gnupg
+          - curl
+        state: present
+
+    - name: Add MongoDB GPG key
+      # Adds the official MongoDB 7.0 GPG key for package verification
+      ansible.builtin.shell: |
+        curl -fsSL {{ mongo_gpg_key_url }} | gpg --dearmor -o {{ mongo_gpg_key_path }}
+      args:
+        creates: "{{ mongo_gpg_key_path }}"
+
+    - name: Add MongoDB repository to APT sources list
+      # Adds the MongoDB repository explicitly for Ubuntu Jammy and MongoDB 7.0
+      ansible.builtin.copy:
+        content: "{{ mongo_repo_line }}"
+        dest: "{{ mongo_source_list_path }}"
+        mode: '0644'
+
+    - name: Update APT package list after adding MongoDB repo
+      # Refresh list again to include MongoDB packages from new repo
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install MongoDB and required components (specific versions)
+      # Installs exact versions of MongoDB components to avoid unwanted upgrades
+      ansible.builtin.apt:
+        name:
+          - mongodb-org={{ mongo_version }}
+          - mongodb-org-database={{ mongo_version }}
+          - mongodb-org-server={{ mongo_version }}
+          - mongodb-org-mongos={{ mongo_version }}
+          - mongodb-org-tools={{ mongo_tools_version }}
+          - mongodb-mongosh={{ mongo_mongosh_version }}
+        state: present
+
+    - name: Ensure MongoDB is not running before config changes
+      # Stops mongod service to safely update config
+      ansible.builtin.service:
+        name: mongod
+        state: stopped
+      ignore_errors: true
+
+    - name: Update mongod.conf to bind to all interfaces
+      # Changes bindIp from 127.0.0.1 to 0.0.0.0 to allow external access
+      ansible.builtin.replace:
+        path: /etc/mongod.conf
+        regexp: 'bindIp:\s*127\.0\.0\.1'
+        replace: 'bindIp: 0.0.0.0'
+
+    - name: Start MongoDB service
+      # Starts the MongoDB server
+      ansible.builtin.service:
+        name: mongod
+        state: started
+        enabled: true
+
+    - name: Check MongoDB status
+      # Verifies that the MongoDB service is running
+      ansible.builtin.shell: systemctl status mongod
+      register: mongod_status
+      changed_when: false # Hey Ansible, even if this runs successfully, don't mark it as a 'change'. I'm just gathering info.
+
+    - name: Print MongoDB status
+      # Outputs status of MongoDB service to the console/log
+      ansible.builtin.debug:
+        var: mongod_status.stdout_lines

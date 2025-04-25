@@ -1,0 +1,19 @@
+- name: Deploy Node.js App with Nginx
+  hosts: app           # Target the 'app' group from your inventory
+  become: true         # Run tasks with sudo privileges
+  vars:
+    nodejs_setup_url: "https://deb.nodesource.com/setup_20.x" 
+
+  tasks:
+    - name: Install Nginx
+      # Installs the Nginx web server
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Ensure Nginx is started and enabled
+      # Restarts Nginx to apply changes and enables it to start at boot
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+        enabled: yes

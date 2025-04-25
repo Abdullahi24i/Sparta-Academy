@@ -1,0 +1,25 @@
+# state the version
+version: '3.8'
+#state what containers you want to create i.e. web and mongo
+services:
+  web:
+    image: tech503-abdullahi-sparta-app-slim:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=mongodb://mongo:27017/posts # mongo connection to the app
+      
+    depends_on:
+      - mongo  # makes sure mongo starts first
+    command: ["sh", "-c", "sleep 10 && node seeds/seed.js && npm start"] 
+
+  mongo:
+    image: mongo:latest 
+    ports:
+      - "27017:27017"
+    command: ["mongod", "--bind_ip", "0.0.0.0"]
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

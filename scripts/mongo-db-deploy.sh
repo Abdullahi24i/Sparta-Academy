@@ -34,6 +34,8 @@ cd /etc
 
 sudo nano mongod.conf
 
+sudo sed -i "s/bindIp: 127.0.0.1/bindIp: 0.0.0.0/" /etc/mongod.conf
+
 #start mongo db
 sudo systemctl start mongod
 

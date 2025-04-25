@@ -41,6 +41,8 @@ sudo DEBIAN_FRONTEND=noninteractive npm install -g pm2
 
 pm2 kill
 
+
+
 pm2 start app.js 
 
 pm2 startup
