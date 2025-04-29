@@ -1,0 +1,11 @@
+- what is docker?
+  - Platform or ecosystem around creating and running containers.
+  - image - single file - contains dependencies to run a programme 
+  - container - programme that has it's own isolated set of hardware resources
+- why do we use docker?
+  - make it easy to install and run software on any computer without having to worry about setup or installing dependencies 
+
+- Name-spacing- isolating resources per process (or group of processes) 
+  - Every time time there's a system call to read Hard-Drive, you are directed to segment of hard-drive where the resources you're looking for is, i.e. python v2  
+- Control groups- limit the amount of resources used per process - i.e. memory or cpu usage.
+- 
