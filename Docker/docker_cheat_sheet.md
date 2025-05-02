@@ -14,6 +14,7 @@ docker help                # List Docker commands and options
 ```bash
 docker pull <image>        # Download an image
 docker build -t <name> <path>  # Build an image from a Dockerfile
+docker build -f Dockerfile.dev . # Build an image form a specific file
 docker images              # List all images
 docker rmi <image>         # Remove an image
 ```
