@@ -4,6 +4,9 @@
   vars:
     nodejs_setup_url: "https://deb.nodesource.com/setup_20.x" 
 
+  environment: 
+    EXAMPLE: "example variable" # demonstration on creating environment variables in a playbook
+
   tasks:
     - name: Install Nginx
       # Installs the Nginx web server
